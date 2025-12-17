@@ -1,6 +1,8 @@
 let flowers = []; 
 let font;
 let level=0;
+let myArray = ["My body,\n my rules", "Autonomy is not a privilege.\n It's a right.", "The only consent \nthat matters is mine.", "Freedom over my own skin.", "No shame in desire.", "Unlearn shame. \nEmbrace desire.", "My sexuality is not a sin.", "Stop policing bodies.\n Start respecting choices.", "Virginity is a construct.\n Freedom is real.", "I am the author \nof my own pleasure.", "Beyond judgment, toward joy.", "The future is consensual.", "Consent is everything.", "Pleasure is power.", "Bodily autonomy now.", " Free to be.", "My choice. My voice."];
+
 
 function preload() {
   font = loadFont('Helvetica-Bold.ttf');
@@ -66,6 +68,7 @@ function flowerPower(){
 
 function createFlower() {
   let flower = {
+    index: int(random(18)),
     xpos: random(0,width),
     ypos: random(0,height),
     talpha: random(120,180),
@@ -84,6 +87,6 @@ function drawFlower(flower) {
     rect(flower.xpos, flower.ypos,240*flower.scl,60*flower.scl,20);
     fill(0, flower.lifespan);
     textSize(15*flower.scl);
-    text("ssssssssssssss",flower.xpos, flower.ypos);
+    text(myArray[flower.index] ,flower.xpos, flower.ypos);
   
 }
